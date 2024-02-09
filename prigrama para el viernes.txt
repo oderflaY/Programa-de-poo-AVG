@@ -1,0 +1,8 @@
+Primero defino la clase persona para que en una seccion diferente 
+ya creo una subclase la cual sea estudiantes encargados 
+crear otra clase dedicada a los materiasles y cantidades pero la puedo hacer con un jeaison como en estructurta de datos 
+separando pefifericos 
+pero crae que una barridable de retidro de matrial del lavoratorio donde el primerdiaq suma uno 
+con un menu el cual integre el cual pida nombre matricula para ingeresar
+
+
