@@ -3,7 +3,7 @@ from Clase_encargado import Encargado
 from Clase_estudiante import Estudiante
 from datetime import date
 
-class almacen:
+class Almacen:
     inventario = []
     registros = []
     peticiones = []

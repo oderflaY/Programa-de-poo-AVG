@@ -1,6 +1,8 @@
-class Equipo():
-    def __int__(self,nombre,perifeico,cables,adaptadores):
+class Equipo:
+    def __init__(self,nombre,tipo, serie, fabricante, modelo, descripcion):
         self.nombre=nombre
-        self.perifeico=perifeico
-        self.cables=cables
-        self.adaptadores=adaptadores
+        self.tipo=tipo
+        self.serie=serie
+        self.fabricante=fabricante
+        self.modelo=modelo
+        self.descripcion=descripcion
