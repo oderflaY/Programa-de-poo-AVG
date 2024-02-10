@@ -5,5 +5,3 @@ class Equipo():
         self.perifeico=perifeico
         self.cables=cables
         self.adaptadores=adaptadores
-
-        
