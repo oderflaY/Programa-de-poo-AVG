@@ -38,10 +38,18 @@ class almacen:
     def agregar_registro(self, peticionID: int, encargado: Encargado):
         self.peticiones[peticionID]['aprovada'] = True
         self.registros.append({
-            'petición': self.peticiones[peticionID],
+            'peticion': self.peticiones[peticionID],
+            'entregado': False,
             'encargado': encargado,
             'fecha': date.now()
         })
+        self.remover_inventario(self.peticiones[peticionID]['equipo'], self.peticiones[peticionID]['cantidad'])
+        
+    def entregar(self, registroID: int):
+        self.registros[registroID]['entregado'] = True
+        self.agregar_inventario(self.registros[registroID]['petición']['equipo'], self.registros[registroID]['petición']['cantidad'])
+        
+        return (self.registros[registroID]['fecha'] - date.now()).days
         
     def buscar_registro(self, nombre: str):
         registros = []
@@ -72,3 +80,6 @@ class almacen:
     
     def obtener_peticion(self, id: int):
         return self.peticiones[id]
+    
+    def __str__(self):
+        return f'Inventario: {self.inventario}\nRegistros: {self.registros}\nPeticiones: {self.peticiones}'
