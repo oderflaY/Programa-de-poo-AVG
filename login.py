@@ -1,6 +1,8 @@
 import flet as ft
 
 class LoginPage(ft.Column):
+    current_user = None
+    
     def __init__(self, on_submit: any):
         self.users = [{
             'matricula': '123456',
