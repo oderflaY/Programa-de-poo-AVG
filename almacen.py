@@ -1,3 +1,5 @@
+from material import Equipo
+
 class almacen:
     inventario = []
     registros = []
@@ -7,3 +9,6 @@ class almacen:
         self.inventario = []
         self.registros = []
         self.peticiones = []
+
+    def add_inventario(self, equipo: Equipo):
+        self.inventario.append(equipo)
