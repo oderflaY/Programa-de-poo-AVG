@@ -41,7 +41,7 @@ class Almacen:
             'peticion': self.peticiones[peticionID],
             'entregado': False,
             'encargado': encargado,
-            'fecha': date.now()
+            'fecha': date.today()
         })
         self.remover_inventario(self.peticiones[peticionID]['equipo'], self.peticiones[peticionID]['cantidad'])
         
@@ -49,12 +49,12 @@ class Almacen:
         self.registros[registroID]['entregado'] = True
         self.agregar_inventario(self.registros[registroID]['petición']['equipo'], self.registros[registroID]['petición']['cantidad'])
         
-        return (self.registros[registroID]['fecha'] - date.now()).days
+        return (self.registros[registroID]['fecha'] - date.today()).days
         
     def buscar_registro(self, nombre: str):
         registros = []
         for id, registro in enumerate(self.registros):
-            if registro['persona'].nombre == nombre or registro['persona'].matricula == nombre:
+            if registro['peticion']['persona'].nombre == nombre or registro['peticion']['persona'].matricula == nombre:
                 registros.append((id, registro))
         return registros
     
@@ -68,7 +68,7 @@ class Almacen:
             'cantidad': cantidad,
             'persona': persona,
             'aprovada': False,
-            'fecha': date.now()
+            'fecha': date.today()
         })
         
     def buscar_peticion(self, nombre: str):

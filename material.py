@@ -1,5 +1,5 @@
 class Equipo:
-    def __init__(self,nombre,tipo, serie, fabricante, modelo, descripcion):
+    def __init__(self,nombre: str,tipo, serie, fabricante, modelo, descripcion):
         self.nombre=nombre
         self.tipo=tipo
         self.serie=serie
