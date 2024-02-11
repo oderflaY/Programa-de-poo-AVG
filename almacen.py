@@ -77,5 +77,12 @@ class Almacen:
     def obtener_peticion(self, id: int):
         return self.peticiones[id]
     
+    def obtener_peticiones(self):
+        peticiones = []
+        for id, peticion in enumerate(self.peticiones):
+            if not peticion['aprovada']:
+                peticiones.append((id, peticion))
+        return peticiones
+    
     def __str__(self):
         return f'Inventario: {self.inventario}\nRegistros: {self.registros}\nPeticiones: {self.peticiones}'

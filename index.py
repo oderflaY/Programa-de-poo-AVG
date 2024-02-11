@@ -19,7 +19,7 @@ class IndexPage(ft.Column):
             super().__init__(controls=[
                     ft.Text("Panel de control"),
                     ft.FilledButton(text="ver inventario", on_click=lambda e: self.router('encargado/ver-inventario')),
-                    ft.FilledButton(text="ver peticiones", on_click=self.realizar_peticion),
+                    ft.FilledButton(text="ver peticiones", on_click=lambda e: self.router('encargado/ver-peticiones')),
                     self.botonSalir
                 ], horizontal_alignment="center",)
         else:

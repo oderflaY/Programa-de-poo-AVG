@@ -28,5 +28,5 @@ class RealizarPeticion(ft.Column):
         
     def enviar(self, e):
         self.almacen.agregar_peticion(self.almacen.buscar_inventario(self.dropdown.value)['equipo'], int(self.cantidadInput.value), self.user);
-        self.almacen.agregar_registro(0, Encargado('jorge', 18, '000003', 'vespertino', 'encargado'))
+
         print(self.almacen.peticiones)

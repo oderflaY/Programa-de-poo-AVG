@@ -9,6 +9,7 @@ from index import IndexPage
 from realizar_peticion import RealizarPeticion
 from ver_adeudos import VerAdeudos
 from ver_inventario import VerInventarioPage
+from ver_peticiones import VerPeticionesPage
 
 # inicializacion de datos
 almacen = Almacen()
@@ -39,6 +40,8 @@ def main(page: ft.Page):
             inventario = VerInventarioPage(router=router, almacen=almacen)
             page.add(inventario)
             inventario.table.update()
+        elif route == 'encargado/ver-peticiones':
+            page.add(VerPeticionesPage(router=router, almacen=almacen, user=login.current_user))
         else:
             page.add(login)
             
