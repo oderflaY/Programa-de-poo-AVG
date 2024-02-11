@@ -4,10 +4,6 @@ from Clase_estudiante import Estudiante
 from datetime import date
 
 class Almacen:
-    inventario = []
-    registros = []
-    peticiones = []
-    
     def __init__(self):
         self.inventario = []
         self.registros = []
