@@ -20,6 +20,8 @@ class VerAdeudos(ft.Column):
                 ft.Text(f"hace {tiempo} dias"),
             ]),
             width=300,))
+            if tiempo > 3:
+                self.adeudos.controls[-1].content.controls.append(ft.Text(f'{tiempo} días atrasados, se debe pagar: {(tiempo * 20)}', color="red"))
             
         self.botonAtras = ft.FilledButton(text="Atras", on_click=lambda e: self.router('index'))
             
